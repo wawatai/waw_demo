@@ -22,7 +22,6 @@ time, mark, audio, video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -37,6 +36,7 @@ body {
 
 ol, ul {
     list-style: none;
+    box-sizing: border-box;
 }
 
 blockquote, q {
@@ -52,7 +52,6 @@ q:before, q:after {
 table {
     border-collapse: collapse;
     border-spacing: 0;
-    font-family: "微軟正黑體";
 }
 
 button {
@@ -65,31 +64,15 @@ button {
 
 select,input {
     outline: none;
-    appearance: none;
     box-sizing: border-box;
     font-family: "微軟正黑體";
 }
 
-i {
+main {
     display: block;
 }
 
 a {
-    display: block;
+    outline: none;
     text-decoration: none;
-}
-
-main {
-    display: block;
-    box-sizing: border-box;
-}
-
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-    appearance: none;
-}
-
-label {
-    display: block;
 }
