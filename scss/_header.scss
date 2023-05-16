@@ -1,0 +1,385 @@
+//header
+header {
+    width: 100%;
+    min-width: 1000px;
+    height: 90px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+
+    article {
+        width: 90%;
+        height: 100%;
+        margin: 0px auto;
+        position: relative;
+
+        //search
+        .inputBox {
+            width: auto;
+            height: auto;
+            float: left;
+            margin-top: 25px;
+            position: relative;
+            z-index: 2;
+
+            &:hover,&:active,&.active {
+
+                input {
+                    width: 300px;
+                    padding-left: 60px;
+                    background: $inputStyle_1_hoverBG;
+                }
+
+                span {
+                    width: 50px;
+
+                    i {
+                        color: $mainIconColor_1;
+                    }
+                }
+            }
+
+            input {
+                width: 0px;
+                height: 40px;
+                @include inputStyle_1;
+            }
+
+            span {
+                display: block;
+                width: 40px;
+                height: 100%;
+                background: $mainBG_1;
+                box-shadow: 0px 0px 8px 0px $mainShadow_1;
+                border-radius: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                cursor: pointer;
+                transition: 0.2s all;
+
+                i {
+                    color: $mainIconColor_2;
+                    font-size: 24px;
+                    transition: 0.2s all;
+                }
+            }
+        }
+
+        //切換按鈕
+        .btnBox {
+            float: right;
+            width: auto;
+            height: auto;
+            margin: 25px 10px 0px 0px;
+            position: relative;
+            z-index: 6;
+
+            &:nth-of-type(2) {
+                margin-right: 0px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 3px;
+                left: 7px;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: $mainBG_1;
+                opacity: 0;
+                pointer-events: none;
+            }
+    
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 8px;
+                right: 2px;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: $mainBG_1;
+                opacity: 0;
+                pointer-events: none;
+            }
+            
+            &:hover,&:active {
+
+                &::before {
+                    animation: dotJump1 0.3s linear 0.2s;
+                }
+
+                &::after {
+                    animation: dotJump2 0.4s linear 0s;
+                }
+                
+                button {
+                    background: $mainBG_1;
+                    animation: rightSide_hover 0.4s linear 0s;
+
+                    i {
+                        color: $mainIconColor_1;
+                    }
+
+                    span {
+                        color: $header_btnHoverColor;
+                    }
+                }
+            }
+
+            &.active {
+                
+                button {
+                    background: $mainBG_1;
+
+                    i {
+                        color: $mainIconColor_1;
+                    }
+
+                    span {
+                        color: $header_btnHoverColor;
+                    }
+                }
+            }
+
+            button {
+                width: auto;
+                height: 40px;
+                transition: 0.3s all;
+                border-radius: 30px;
+                background: transparent;
+                padding: 0px 15px;
+
+                i {
+                    font-size: 28px;
+                    color: $mainIconColor_2;
+                    transition: 0.3s all;
+                }
+
+                span {
+                    vertical-align: super;
+                    color: $mainColor_1;
+                    letter-spacing: 1px;
+                    font-weight: bold;
+                    font-size: 14px;
+                    transition: 0.3s all;
+                    padding-left: 8px;
+                }
+            }
+        }
+
+        //logo
+        .logo {
+            width: 224px;
+            height: 100%;
+            margin: 0px auto;
+            cursor: pointer;
+            position: relative;
+            z-index: 3;
+
+            div {
+                position: absolute;
+                width: 100%;
+                height: 72px;
+                top: 50%;
+                transform: translateY(-50%);
+
+                &:nth-of-type(1) {
+                    animation: fadeOut 15s linear 0s infinite;
+                }
+
+                &:nth-of-type(2) {
+                    background-position-y: 100%;
+                    animation: fadeIn 15s linear 0s infinite;
+                }
+            }
+        }
+
+        //泡泡主體
+        .dropContainer {
+            width: 600px;
+            height: 600px;
+            background: $header_bubbleBG;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -510px;
+            border-radius: 50% 50% 50% 50%;
+            z-index: 2;
+            animation: skakeBub 15s linear 0s infinite,backgroundTrans 15s linear 0s infinite;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                background: $bubble_BG;
+                border-radius: 100%;
+                opacity: 0;
+                animation: bubBreak 15s linear 0s infinite;
+            }
+        }
+        .fakeDrop {
+            width: 600px;
+            height: 600px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -510px;
+            border-radius: 100%;
+
+            .drop {
+                position: absolute;
+                background: $header_bubbleBG_2;
+                border-radius: 100%;
+                opacity: 0;
+
+                &::before,&::after {
+                    content: "";
+                    position: absolute;
+                    border-radius: 100%;
+                    background: $header_bubbleBG_2;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: 0px;
+                }
+                
+                &:nth-child(1) {
+                    width: 20px;
+                    height: 20px;
+                    left: 160px;
+                    bottom: 25px;
+                    transform: rotate(45deg);
+                    animation: smallBub1 15s linear 0s infinite;
+
+                    &::before {
+                        width: 10px;
+                        height: 10px;
+                        animation: smallBub1_2 15s linear 0s infinite;
+                    }
+
+                    &::after {
+                        width: 6px;
+                        height: 6px;
+                        animation: smallBub1_3 15s linear 0s infinite;
+                    }
+                }
+
+                &:nth-child(2) {
+                    width: 15px;
+                    height: 15px;
+                    right: 170px;
+                    bottom: 30px;
+                    transform: rotate(120deg);
+                    animation: smallBub2 15s linear 0s infinite;
+
+                    &::before {
+                        width: 8px;
+                        height: 8px;
+                        animation: smallBub2_2 15s linear 0s infinite;
+                    }
+
+                    &::after {
+                        width: 4px;
+                        height: 4px;
+                        animation: smallBub2_3 15s linear 0s infinite;
+                    }
+                }
+
+                &:nth-child(3) {
+                    width: 20px;
+                    height: 20px;
+                    left: 140px;
+                    bottom: 40px;
+                    transform: rotate(90deg);
+                    animation: smallBub3 15s linear 0s infinite;
+
+                    &::before {
+                        width: 6px;
+                        height: 6px;
+                        animation: smallBub3_2 15s linear 0s infinite;
+                    }
+                }
+
+                &:nth-child(4) {
+                    width: 10px;
+                    height: 10px;
+                    right: 230px;
+                    bottom: 10px;
+                    transform: rotate(140deg);
+                    animation: smallBub4 15s linear 0s infinite;
+                }
+
+                &:nth-child(5) {
+                    width: 20px;
+                    height: 20px;
+                    right: 140px;
+                    bottom: 40px;
+                    transform: rotate(110deg);
+                    animation: smallBub5 15s linear 0s infinite;
+
+                    &::before {
+                        width: 6px;
+                        height: 6px;
+                        animation: smallBub5_2 15s linear 0s infinite;
+                    }
+                }
+
+                &:nth-child(6)  {
+                    width: 30px;
+                    height: 30px;
+                    left: 140px;
+                    bottom: 40px;
+                    transform: rotate(70deg);
+                    animation: smallBub6 15s linear 0s infinite;
+
+                    &::before {
+                        width: 8px;
+                        height: 8px;
+                        animation: smallBub6_2 15s linear 0s infinite;
+                    }
+
+                    &::after {
+                        width: 5px;
+                        height: 5px;
+                        animation: smallBub6_3 15s linear 0s infinite;
+                    }
+                }
+            }
+        }
+
+        @media only screen and (max-width: 1260px) {
+            
+            .inputBox {
+
+                &:hover,&:active,&.active {
+
+                    input {
+                        width: 260px;
+                    }
+                }
+            }
+        }
+    }
+
+    //左上小泡泡
+    .small_Bub1 {
+        width: 120px;
+        height: 120px;
+        background: $bubble_BG;
+        border-radius: 100%;
+        position: absolute;
+        left: -35px;
+        top: -30px;
+        opacity: 0.4;
+        animation: small_shakeBub1 12s linear 0s infinite;
+    }
+}

@@ -1,0 +1,84 @@
+//header
+$header_btnHoverColor: #084a14;
+$header_bubbleBG: radial-gradient(#51b558,#63bb64);
+$header_bubbleBG_2: #ffffff;
+
+//入場動畫
+$anime_rainBG: #ffffff;
+$anime_frogBG_1: #259414;
+$anime_frogBG_2: #38B643;
+$anime_frogBG_3: #86D554;
+
+//mainColor
+$mainBG_1: #f2cd37;
+$mainBG_2: #ffffff;
+
+$mainColor_1: #ffffff;
+$mainColor_2: #33853b;
+
+$mainShadow_1: #0000004d;
+
+$mainIconColor_1: #146523;
+$mainIconColor_2: #ffffff;
+
+$bubble_BG: radial-gradient(transparent,#ffffff);
+
+//input
+@mixin inputStyle_1 {
+    background: transparent;
+    border-radius: 50px;
+    border: none;
+    padding-left: 0px;
+    font-size: 15px;
+    transition: 0.4s all;
+    color: #33853b;
+
+    &:hover,&:active,&.active {
+        border: solid 1px #fcda4f;
+        background: linear-gradient(to top,#f9ad1b 0%,#f2cd37 100%);
+        box-shadow: 0px 5px 10px 0px #0000004d inset;
+        color: #ffffff;
+        transition: 0.2s all;
+
+        &::placeholder {
+            color: #ffffff;
+        }
+    }
+
+    &::placeholder {
+        color: #33853b;
+    }
+}
+$inputStyle_1_hoverBG: #ffffff;
+
+//套件
+
+@mixin scrollBar {
+    &::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #333333;
+        border-radius: 30px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+}
+
+@mixin goTop {
+    background: #ffffff;
+    border: solid 2px #828282;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s all;
+    opacity: 0;
+    pointer-events: none;
+}
+$goTop_IconColor: #41515d;
