@@ -12,23 +12,22 @@ header {
         width: 90%;
         height: 100%;
         margin: 0px auto;
-        position: relative;
 
         //search
         .inputBox {
+            float: left;
             width: auto;
             height: auto;
-            float: left;
-            margin-top: 25px;
             position: relative;
             z-index: 2;
+            margin-top: 25px;
 
             &:hover,&:active,&.active {
 
                 input {
                     width: 300px;
-                    padding-left: 60px;
                     background: $inputStyle_1_hoverBG;
+                    padding-left: 60px;
                 }
 
                 span {
@@ -59,8 +58,8 @@ header {
                 position: absolute;
                 top: 0;
                 left: 0;
-                cursor: pointer;
                 transition: 0.2s all;
+                cursor: pointer;
 
                 i {
                     color: $mainIconColor_2;
@@ -75,99 +74,82 @@ header {
             float: right;
             width: auto;
             height: auto;
-            margin: 25px 10px 0px 0px;
             position: relative;
             z-index: 6;
-
-            &:nth-of-type(2) {
-                margin-right: 0px;
-            }
-
-            &::before {
-                content: "";
-                position: absolute;
-                top: 3px;
-                left: 7px;
-                width: 10px;
-                height: 10px;
-                border-radius: 50%;
-                background: $mainBG_1;
-                opacity: 0;
-                pointer-events: none;
-            }
-    
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: 8px;
-                right: 2px;
-                width: 10px;
-                height: 10px;
-                border-radius: 50%;
-                background: $mainBG_1;
-                opacity: 0;
-                pointer-events: none;
-            }
-            
-            &:hover,&:active {
-
-                &::before {
-                    animation: dotJump1 0.3s linear 0.2s;
-                }
-
-                &::after {
-                    animation: dotJump2 0.4s linear 0s;
-                }
-                
-                button {
-                    background: $mainBG_1;
-                    animation: rightSide_hover 0.4s linear 0s;
-
-                    i {
-                        color: $mainIconColor_1;
-                    }
-
-                    span {
-                        color: $header_btnHoverColor;
-                    }
-                }
-            }
-
-            &.active {
-                
-                button {
-                    background: $mainBG_1;
-
-                    i {
-                        color: $mainIconColor_1;
-                    }
-
-                    span {
-                        color: $header_btnHoverColor;
-                    }
-                }
-            }
+            margin-top: 25px;
 
             button {
                 width: auto;
                 height: 40px;
-                transition: 0.3s all;
+                background: none;
                 border-radius: 30px;
-                background: transparent;
+                position: relative;
+                transition: 0.3s all;
                 padding: 0px 15px;
+                margin-right: 15px;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 3px;
+                    left: 7px;
+                    width: 10px;
+                    height: 10px;
+                    background: $mainBG_1;
+                    border-radius: 50%;
+                    opacity: 0;
+                    pointer-events: none;
+                    z-index: -1;
+                }
+
+                &:hover,&:active {
+                    background: $mainBG_1;
+                    animation: rightSide_hover 0.4s linear 0s;
+
+                    &::before {
+                        animation: dotJump1 0.3s linear 0.2s;
+                    }
+    
+                    &::after {
+                        animation: dotJump2 0.4s linear 0s;
+                    }
+                    
+                    i {
+                        color: $mainIconColor_1;
+                    }
+
+                    span {
+                        color: $header_btnHoverColor;
+                    }
+                }
+                &.active {
+                    background: $mainBG_1;
+    
+                    i {
+                        color: $mainIconColor_1;
+                    }
+
+                    span {
+                        color: $header_btnHoverColor;
+                    }
+                }
+
+                &:last-child {
+                    margin: 0;
+                }
 
                 i {
-                    font-size: 28px;
                     color: $mainIconColor_2;
+                    font-size: 28px;
                     transition: 0.3s all;
                 }
 
                 span {
-                    vertical-align: super;
                     color: $mainColor_1;
-                    letter-spacing: 1px;
-                    font-weight: bold;
                     font-size: 14px;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    vertical-align: super;
                     transition: 0.3s all;
                     padding-left: 8px;
                 }
@@ -178,15 +160,15 @@ header {
         .logo {
             width: 224px;
             height: 100%;
-            margin: 0px auto;
-            cursor: pointer;
             position: relative;
+            cursor: pointer;
             z-index: 3;
+            margin: 0px auto;
 
             div {
-                position: absolute;
                 width: 100%;
                 height: 72px;
+                position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
 
@@ -206,11 +188,11 @@ header {
             width: 600px;
             height: 600px;
             background: $header_bubbleBG;
+            border-radius: 50%;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
             top: -510px;
-            border-radius: 50% 50% 50% 50%;
             z-index: 2;
             animation: skakeBub 15s linear 0s infinite,backgroundTrans 15s linear 0s infinite;
 
@@ -230,11 +212,11 @@ header {
         .fakeDrop {
             width: 600px;
             height: 600px;
+            border-radius: 100%;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
             top: -510px;
-            border-radius: 100%;
 
             .drop {
                 position: absolute;
@@ -245,8 +227,8 @@ header {
                 &::before,&::after {
                     content: "";
                     position: absolute;
-                    border-radius: 100%;
                     background: $header_bubbleBG_2;
+                    border-radius: 100%;
                     left: 50%;
                     transform: translateX(-50%);
                     bottom: 0px;
@@ -351,19 +333,6 @@ header {
                         width: 5px;
                         height: 5px;
                         animation: smallBub6_3 15s linear 0s infinite;
-                    }
-                }
-            }
-        }
-
-        @media only screen and (max-width: 1260px) {
-            
-            .inputBox {
-
-                &:hover,&:active,&.active {
-
-                    input {
-                        width: 260px;
                     }
                 }
             }

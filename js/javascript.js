@@ -17,15 +17,15 @@ $(function(){
 		},1500);
 	})
 
-    $('.webBtn').click(function(){
+    $('header .btnBox button').click(function(){
         $(this).addClass('active');
         $(this).siblings().removeClass('active');
-        $('.mainBox').attr('class','mainBox web');
-    })
-    $('.mobileBtn').click(function(){
-        $(this).addClass('active');
-        $(this).siblings().removeClass('active');
-        $('.mainBox').attr('class','mainBox mobile');
+
+        var n = $(this).index();
+
+        $(".mainBox ul:eq("+ n +")")
+        .addClass("display")
+        .siblings().removeClass("display");
     })
 })
 
@@ -71,10 +71,10 @@ $(function(){
 
 $(function(){
     $('.img').each(function(index){
-        $('#web_demo'+index+' .img').css('background','url(./images/demoImg/web_demo'+index+'.jpg) no-repeat top center');
-        $('#web_demo'+index+' .link').attr('href','./images/demoImg/web_demo'+index+'.jpg');
-        $('#mobile_demo'+index+' .img').css('background','url(./images/demoImg/mobile_demo'+index+'.jpg)  no-repeat top center');
-        $('#mobile_demo'+index+' .link').attr('href','./images/demoImg/mobile_demo'+index+'.jpg');
+        $('#web_demo'+index+' .img').css('background','url(./images/demoImg/web/web_demo'+index+'.jpg) no-repeat top center');
+        $('#web_demo'+index+' .link').attr('href','./images/demoImg/web/web_demo'+index+'.jpg');
+        $('#mobile_demo'+index+' .img').css('background','url(./images/demoImg/mobile/mobile_demo'+index+'.jpg)  no-repeat top center');
+        $('#mobile_demo'+index+' .link').attr('href','./images/demoImg/mobile/mobile_demo'+index+'.jpg');
         $('.img').css('background-size','cover');
     })
 })
@@ -85,23 +85,23 @@ $(function(){
     $(window).scroll(function () {
         var scrollVal = $(this).scrollTop();
         if(scrollVal > 1){
-                $(".gotop")
-                .css({
-                    "opacity" : "1",
-                    "pointer-events" : "visible",
-                });
+            $(".gotop")
+            .css({
+                "opacity" : "1",
+                "pointer-events" : "visible",
+            });
         } else{
-                $(".gotop")
-                .css({
-                    "opacity" : "0",
-                    "pointer-events" : "none",
-                });
+            $(".gotop")
+            .css({
+                "opacity" : "0",
+                "pointer-events" : "none",
+            });
         };
     })
     $(".gotop").click(function(){
         var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body'); //各瀏覽器相容性
         $body.delay('0').animate({
-                scrollTop:0
+            scrollTop: 0,
         },500);
     })
 })

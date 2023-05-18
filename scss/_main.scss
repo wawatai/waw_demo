@@ -1,7 +1,7 @@
 html {
     width: 100%;
     height: 100%;
-    background: #45b34c;
+    background: $BG;
 
     body {
         width: 100%;
@@ -19,17 +19,23 @@ html {
                 width: 90%;
                 height: 100%;
                 min-height: 750px;
-                margin: 0px auto;
                 padding: 120px 0 50px;
+                margin: 0px auto;
 
-                &.web {
+                ul {
+                    display: none;
+                    width: auto;
+                    height: 100%;
+                    gap: 50px 25px;
 
-                    .forWeb {
+                    &.display {
                         display: grid;
+                    }
+
+                    &.forWeb {
                         grid-template-columns: repeat(4,1fr);
 
                         li {
-                            height: 0px;
                             padding-bottom: 67%;
 
                             &.hoverA {
@@ -77,16 +83,11 @@ html {
                             }
                         }
                     }
-                }
 
-                &.mobile {
-
-                    .forMobile {
-                        display: grid;
+                    &.forMobile {
                         grid-template-columns: repeat(6,1fr);
 
                         li {
-                            height: 0px;
                             padding-bottom: 175%;
 
                             &.hoverA {
@@ -142,20 +143,14 @@ html {
                             }
                         }
                     }
-                }
-
-                ul {
-                    display: none;
-                    width: auto;
-                    height: 100%;
-                    gap: 50px 25px;
 
                     li {
-                        position: relative;
+                        height: 0;
                         border-radius: 10px;
+                        box-shadow: 0px 2px 8px 0px $mainShadow_1;
+                        position: relative;
                         overflow: hidden;
                         cursor: pointer;
-                        box-shadow: 0px 2px 8px 0px $mainShadow_1;
 
                         &:hover,&:active,&.active {
 
@@ -207,28 +202,27 @@ html {
                         }
 
                         h1 {
-                            position: absolute;
                             width: 100%;
                             bottom: 0px;
                             background: $mainBG_2;
-                            transition: 0.3s all;
+                            position: absolute;
                             left: 50%;
                             transform: translateX(-50%);
+                            transition: 0.3s all;
                             overflow: hidden;
 
                             p {
+                                color: $mainColor_2;
+                                font-size: 18px;
+                                font-weight: bold;
                                 position: absolute;
                                 top: 50%;
                                 left: 50%;
                                 transform: translate(-50%,-50%);
-                                font-size: 18px;
-                                font-weight: bold;
-                                color: $mainColor_2;
                                 transition: 0.3s all;
                             }
 
                             a {
-                                opacity: 0;
                                 width: 80px;
                                 height: 80px;
                                 background: $mainBG_2;
@@ -240,6 +234,7 @@ html {
                                 position: absolute;
                                 pointer-events: none;
                                 transition: 0.2s all;
+                                opacity: 0;
 
                                 &:hover,&:active,&.active {
                                     transform: scale(1.1);
@@ -277,10 +272,10 @@ html {
 
         //bg
         .bg {
-            position: fixed;
             width: 100%;
             min-width: 1100px;
             height: 100%;
+            position: fixed;
             top: 0px;
             left: 0px;
             z-index: -999;
@@ -429,7 +424,7 @@ html {
         //漂浮泡泡
         .bubContainer {
             width: 100%;
-            min-width: 1100px;
+            min-width: 1000px;
             height: 120px;
             position: fixed;
             top: 0px;
@@ -534,7 +529,7 @@ html {
             width: 100%;
             height: 100%;
             min-height: 937px;
-            background: #165f1b;
+            background: $BG_mainAnime;
             z-index: 100;
             overflow: hidden;
 

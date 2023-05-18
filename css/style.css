@@ -159,20 +159,19 @@ header article {
   width: 90%;
   height: 100%;
   margin: 0px auto;
-  position: relative;
 }
 header article .inputBox {
+  float: left;
   width: auto;
   height: auto;
-  float: left;
-  margin-top: 25px;
   position: relative;
   z-index: 2;
+  margin-top: 25px;
 }
 header article .inputBox:hover input, header article .inputBox:active input, header article .inputBox.active input {
   width: 300px;
-  padding-left: 60px;
   background: #ffffff;
+  padding-left: 60px;
 }
 header article .inputBox:hover span, header article .inputBox:active span, header article .inputBox.active span {
   width: 50px;
@@ -183,19 +182,19 @@ header article .inputBox:hover span i, header article .inputBox:active span i, h
 header article .inputBox input {
   width: 0px;
   height: 40px;
-  background: transparent;
+  background: none;
   border-radius: 50px;
   border: none;
-  padding-left: 0px;
+  color: #33853b;
   font-size: 15px;
   -webkit-transition: 0.4s all;
   transition: 0.4s all;
-  color: #33853b;
+  padding-left: 0px;
 }
 header article .inputBox input:hover, header article .inputBox input:active, header article .inputBox input.active {
-  border: solid 1px #fcda4f;
   background: -webkit-gradient(linear, left bottom, left top, from(#f9ad1b), to(#f2cd37));
   background: linear-gradient(to top, #f9ad1b 0%, #f2cd37 100%);
+  border: solid 1px #fcda4f;
   -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3019607843) inset;
           box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3019607843) inset;
   color: #ffffff;
@@ -252,9 +251,9 @@ header article .inputBox span {
   position: absolute;
   top: 0;
   left: 0;
-  cursor: pointer;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
+  cursor: pointer;
 }
 header article .inputBox span i {
   color: #ffffff;
@@ -266,86 +265,77 @@ header article .btnBox {
   float: right;
   width: auto;
   height: auto;
-  margin: 25px 10px 0px 0px;
   position: relative;
   z-index: 6;
+  margin-top: 25px;
 }
-header article .btnBox:nth-of-type(2) {
-  margin-right: 0px;
+header article .btnBox button {
+  width: auto;
+  height: 40px;
+  background: none;
+  border-radius: 30px;
+  position: relative;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  padding: 0px 15px;
+  margin-right: 15px;
 }
-header article .btnBox::before {
+header article .btnBox button::before {
   content: "";
   position: absolute;
   top: 3px;
   left: 7px;
   width: 10px;
   height: 10px;
-  border-radius: 50%;
   background: #f2cd37;
+  border-radius: 50%;
   opacity: 0;
   pointer-events: none;
+  z-index: -1;
 }
-header article .btnBox::after {
-  content: "";
-  position: absolute;
-  bottom: 8px;
-  right: 2px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #f2cd37;
-  opacity: 0;
-  pointer-events: none;
-}
-header article .btnBox:hover::before, header article .btnBox:active::before {
-  -webkit-animation: dotJump1 0.3s linear 0.2s;
-          animation: dotJump1 0.3s linear 0.2s;
-}
-header article .btnBox:hover::after, header article .btnBox:active::after {
-  -webkit-animation: dotJump2 0.4s linear 0s;
-          animation: dotJump2 0.4s linear 0s;
-}
-header article .btnBox:hover button, header article .btnBox:active button {
+header article .btnBox button:hover, header article .btnBox button:active {
   background: #f2cd37;
   -webkit-animation: rightSide_hover 0.4s linear 0s;
           animation: rightSide_hover 0.4s linear 0s;
 }
-header article .btnBox:hover button i, header article .btnBox:active button i {
+header article .btnBox button:hover::before, header article .btnBox button:active::before {
+  -webkit-animation: dotJump1 0.3s linear 0.2s;
+          animation: dotJump1 0.3s linear 0.2s;
+}
+header article .btnBox button:hover::after, header article .btnBox button:active::after {
+  -webkit-animation: dotJump2 0.4s linear 0s;
+          animation: dotJump2 0.4s linear 0s;
+}
+header article .btnBox button:hover i, header article .btnBox button:active i {
   color: #146523;
 }
-header article .btnBox:hover button span, header article .btnBox:active button span {
+header article .btnBox button:hover span, header article .btnBox button:active span {
   color: #084a14;
 }
-header article .btnBox.active button {
+header article .btnBox button.active {
   background: #f2cd37;
 }
-header article .btnBox.active button i {
+header article .btnBox button.active i {
   color: #146523;
 }
-header article .btnBox.active button span {
+header article .btnBox button.active span {
   color: #084a14;
 }
-header article .btnBox button {
-  width: auto;
-  height: 40px;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
-  border-radius: 30px;
-  background: transparent;
-  padding: 0px 15px;
+header article .btnBox button:last-child {
+  margin: 0;
 }
 header article .btnBox button i {
-  font-size: 28px;
   color: #ffffff;
+  font-size: 28px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
 }
 header article .btnBox button span {
-  vertical-align: super;
   color: #ffffff;
-  letter-spacing: 1px;
-  font-weight: bold;
   font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  vertical-align: super;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   padding-left: 8px;
@@ -353,15 +343,15 @@ header article .btnBox button span {
 header article .logo {
   width: 224px;
   height: 100%;
-  margin: 0px auto;
-  cursor: pointer;
   position: relative;
+  cursor: pointer;
   z-index: 3;
+  margin: 0px auto;
 }
 header article .logo div {
-  position: absolute;
   width: 100%;
   height: 72px;
+  position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -379,12 +369,12 @@ header article .dropContainer {
   width: 600px;
   height: 600px;
   background: radial-gradient(#51b558, #63bb64);
+  border-radius: 50%;
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   top: -510px;
-  border-radius: 50% 50% 50% 50%;
   z-index: 2;
   -webkit-animation: skakeBub 15s linear 0s infinite, backgroundTrans 15s linear 0s infinite;
           animation: skakeBub 15s linear 0s infinite, backgroundTrans 15s linear 0s infinite;
@@ -405,12 +395,12 @@ header article .dropContainer::before {
 header article .fakeDrop {
   width: 600px;
   height: 600px;
+  border-radius: 100%;
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   top: -510px;
-  border-radius: 100%;
 }
 header article .fakeDrop .drop {
   position: absolute;
@@ -421,8 +411,8 @@ header article .fakeDrop .drop {
 header article .fakeDrop .drop::before, header article .fakeDrop .drop::after {
   content: "";
   position: absolute;
-  border-radius: 100%;
   background: #ffffff;
+  border-radius: 100%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -536,11 +526,6 @@ header article .fakeDrop .drop:nth-child(6)::after {
   -webkit-animation: smallBub6_3 15s linear 0s infinite;
           animation: smallBub6_3 15s linear 0s infinite;
 }
-@media only screen and (max-width: 1260px) {
-  header article .inputBox:hover input, header article .inputBox:active input, header article .inputBox.active input {
-    width: 260px;
-  }
-}
 header .small_Bub1 {
   width: 120px;
   height: 120px;
@@ -585,87 +570,8 @@ html body main .mainBox {
   width: 90%;
   height: 100%;
   min-height: 750px;
-  margin: 0px auto;
   padding: 120px 0 50px;
-}
-html body main .mainBox.web .forWeb {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[4];
-  grid-template-columns: repeat(4, 1fr);
-}
-html body main .mainBox.web .forWeb li {
-  height: 0px;
-  padding-bottom: 67%;
-}
-html body main .mainBox.web .forWeb li.hoverA a {
-  top: 35%;
-}
-html body main .mainBox.web .forWeb li:hover h1, html body main .mainBox.web .forWeb li:active h1, html body main .mainBox.web .forWeb li.active h1 {
-  height: 60%;
-}
-html body main .mainBox.web .forWeb li:hover h1 p, html body main .mainBox.web .forWeb li:active h1 p, html body main .mainBox.web .forWeb li.active h1 p {
-  top: 20%;
-}
-html body main .mainBox.web .forWeb li:hover h1 a:nth-of-type(1), html body main .mainBox.web .forWeb li:active h1 a:nth-of-type(1), html body main .mainBox.web .forWeb li.active h1 a:nth-of-type(1) {
-  left: 25%;
-}
-html body main .mainBox.web .forWeb li:hover h1 a:nth-of-type(2), html body main .mainBox.web .forWeb li:active h1 a:nth-of-type(2), html body main .mainBox.web .forWeb li.active h1 a:nth-of-type(2) {
-  right: 25%;
-}
-html body main .mainBox.web .forWeb li h1 {
-  height: 20%;
-}
-html body main .mainBox.web .forWeb li h1 a:nth-of-type(1) {
-  left: 5%;
-}
-html body main .mainBox.web .forWeb li h1 a:nth-of-type(2) {
-  right: 5%;
-}
-html body main .mainBox.mobile .forMobile {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[6];
-  grid-template-columns: repeat(6, 1fr);
-}
-html body main .mainBox.mobile .forMobile li {
-  height: 0px;
-  padding-bottom: 175%;
-}
-html body main .mainBox.mobile .forMobile li.hoverA a:nth-of-type(1) {
-  top: 15%;
-  left: 25%;
-}
-html body main .mainBox.mobile .forMobile li.hoverA a:nth-of-type(2) {
-  top: 45%;
-  right: 25%;
-}
-html body main .mainBox.mobile .forMobile li:hover h1, html body main .mainBox.mobile .forMobile li:active h1, html body main .mainBox.mobile .forMobile li.active h1 {
-  height: 70%;
-}
-html body main .mainBox.mobile .forMobile li:hover h1 p, html body main .mainBox.mobile .forMobile li:active h1 p, html body main .mainBox.mobile .forMobile li.active h1 p {
-  top: 90%;
-}
-html body main .mainBox.mobile .forMobile li:hover h1 a:nth-of-type(1), html body main .mainBox.mobile .forMobile li:active h1 a:nth-of-type(1), html body main .mainBox.mobile .forMobile li.active h1 a:nth-of-type(1) {
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-html body main .mainBox.mobile .forMobile li:hover h1 a:nth-of-type(1):hover, html body main .mainBox.mobile .forMobile li:hover h1 a:nth-of-type(1):active, html body main .mainBox.mobile .forMobile li:hover h1 a:nth-of-type(1).active, html body main .mainBox.mobile .forMobile li:active h1 a:nth-of-type(1):hover, html body main .mainBox.mobile .forMobile li:active h1 a:nth-of-type(1):active, html body main .mainBox.mobile .forMobile li:active h1 a:nth-of-type(1).active, html body main .mainBox.mobile .forMobile li.active h1 a:nth-of-type(1):hover, html body main .mainBox.mobile .forMobile li.active h1 a:nth-of-type(1):active, html body main .mainBox.mobile .forMobile li.active h1 a:nth-of-type(1).active {
-  -webkit-transform: scale(1.2) translateX(-42%);
-          transform: scale(1.2) translateX(-42%);
-}
-html body main .mainBox.mobile .forMobile li:hover h1 a:nth-of-type(2), html body main .mainBox.mobile .forMobile li:active h1 a:nth-of-type(2), html body main .mainBox.mobile .forMobile li.active h1 a:nth-of-type(2) {
-  right: 50%;
-  -webkit-transform: translateX(50%);
-          transform: translateX(50%);
-}
-html body main .mainBox.mobile .forMobile li:hover h1 a:nth-of-type(2):hover, html body main .mainBox.mobile .forMobile li:hover h1 a:nth-of-type(2):active, html body main .mainBox.mobile .forMobile li:hover h1 a:nth-of-type(2).active, html body main .mainBox.mobile .forMobile li:active h1 a:nth-of-type(2):hover, html body main .mainBox.mobile .forMobile li:active h1 a:nth-of-type(2):active, html body main .mainBox.mobile .forMobile li:active h1 a:nth-of-type(2).active, html body main .mainBox.mobile .forMobile li.active h1 a:nth-of-type(2):hover, html body main .mainBox.mobile .forMobile li.active h1 a:nth-of-type(2):active, html body main .mainBox.mobile .forMobile li.active h1 a:nth-of-type(2).active {
-  -webkit-transform: scale(1.2) translateX(42%);
-          transform: scale(1.2) translateX(42%);
-}
-html body main .mainBox.mobile .forMobile li h1 {
-  height: 10%;
+  margin: 0px auto;
 }
 html body main .mainBox ul {
   display: none;
@@ -673,13 +579,91 @@ html body main .mainBox ul {
   height: 100%;
   gap: 50px 25px;
 }
+html body main .mainBox ul.display {
+  display: -ms-grid;
+  display: grid;
+}
+html body main .mainBox ul.forWeb {
+  -ms-grid-columns: (1fr)[4];
+  grid-template-columns: repeat(4, 1fr);
+}
+html body main .mainBox ul.forWeb li {
+  padding-bottom: 67%;
+}
+html body main .mainBox ul.forWeb li.hoverA a {
+  top: 35%;
+}
+html body main .mainBox ul.forWeb li:hover h1, html body main .mainBox ul.forWeb li:active h1, html body main .mainBox ul.forWeb li.active h1 {
+  height: 60%;
+}
+html body main .mainBox ul.forWeb li:hover h1 p, html body main .mainBox ul.forWeb li:active h1 p, html body main .mainBox ul.forWeb li.active h1 p {
+  top: 20%;
+}
+html body main .mainBox ul.forWeb li:hover h1 a:nth-of-type(1), html body main .mainBox ul.forWeb li:active h1 a:nth-of-type(1), html body main .mainBox ul.forWeb li.active h1 a:nth-of-type(1) {
+  left: 25%;
+}
+html body main .mainBox ul.forWeb li:hover h1 a:nth-of-type(2), html body main .mainBox ul.forWeb li:active h1 a:nth-of-type(2), html body main .mainBox ul.forWeb li.active h1 a:nth-of-type(2) {
+  right: 25%;
+}
+html body main .mainBox ul.forWeb li h1 {
+  height: 20%;
+}
+html body main .mainBox ul.forWeb li h1 a:nth-of-type(1) {
+  left: 5%;
+}
+html body main .mainBox ul.forWeb li h1 a:nth-of-type(2) {
+  right: 5%;
+}
+html body main .mainBox ul.forMobile {
+  -ms-grid-columns: (1fr)[6];
+  grid-template-columns: repeat(6, 1fr);
+}
+html body main .mainBox ul.forMobile li {
+  padding-bottom: 175%;
+}
+html body main .mainBox ul.forMobile li.hoverA a:nth-of-type(1) {
+  top: 15%;
+  left: 25%;
+}
+html body main .mainBox ul.forMobile li.hoverA a:nth-of-type(2) {
+  top: 45%;
+  right: 25%;
+}
+html body main .mainBox ul.forMobile li:hover h1, html body main .mainBox ul.forMobile li:active h1, html body main .mainBox ul.forMobile li.active h1 {
+  height: 70%;
+}
+html body main .mainBox ul.forMobile li:hover h1 p, html body main .mainBox ul.forMobile li:active h1 p, html body main .mainBox ul.forMobile li.active h1 p {
+  top: 90%;
+}
+html body main .mainBox ul.forMobile li:hover h1 a:nth-of-type(1), html body main .mainBox ul.forMobile li:active h1 a:nth-of-type(1), html body main .mainBox ul.forMobile li.active h1 a:nth-of-type(1) {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+html body main .mainBox ul.forMobile li:hover h1 a:nth-of-type(1):hover, html body main .mainBox ul.forMobile li:hover h1 a:nth-of-type(1):active, html body main .mainBox ul.forMobile li:hover h1 a:nth-of-type(1).active, html body main .mainBox ul.forMobile li:active h1 a:nth-of-type(1):hover, html body main .mainBox ul.forMobile li:active h1 a:nth-of-type(1):active, html body main .mainBox ul.forMobile li:active h1 a:nth-of-type(1).active, html body main .mainBox ul.forMobile li.active h1 a:nth-of-type(1):hover, html body main .mainBox ul.forMobile li.active h1 a:nth-of-type(1):active, html body main .mainBox ul.forMobile li.active h1 a:nth-of-type(1).active {
+  -webkit-transform: scale(1.2) translateX(-42%);
+          transform: scale(1.2) translateX(-42%);
+}
+html body main .mainBox ul.forMobile li:hover h1 a:nth-of-type(2), html body main .mainBox ul.forMobile li:active h1 a:nth-of-type(2), html body main .mainBox ul.forMobile li.active h1 a:nth-of-type(2) {
+  right: 50%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+html body main .mainBox ul.forMobile li:hover h1 a:nth-of-type(2):hover, html body main .mainBox ul.forMobile li:hover h1 a:nth-of-type(2):active, html body main .mainBox ul.forMobile li:hover h1 a:nth-of-type(2).active, html body main .mainBox ul.forMobile li:active h1 a:nth-of-type(2):hover, html body main .mainBox ul.forMobile li:active h1 a:nth-of-type(2):active, html body main .mainBox ul.forMobile li:active h1 a:nth-of-type(2).active, html body main .mainBox ul.forMobile li.active h1 a:nth-of-type(2):hover, html body main .mainBox ul.forMobile li.active h1 a:nth-of-type(2):active, html body main .mainBox ul.forMobile li.active h1 a:nth-of-type(2).active {
+  -webkit-transform: scale(1.2) translateX(42%);
+          transform: scale(1.2) translateX(42%);
+}
+html body main .mainBox ul.forMobile li h1 {
+  height: 10%;
+}
 html body main .mainBox ul li {
-  position: relative;
+  height: 0;
   border-radius: 10px;
-  overflow: hidden;
-  cursor: pointer;
   -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3019607843);
           box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3019607843);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 html body main .mainBox ul li:hover .img, html body main .mainBox ul li:active .img, html body main .mainBox ul li.active .img {
   -webkit-transform: scale(1.1);
@@ -725,31 +709,30 @@ html body main .mainBox ul li .img::before {
   transition: 0.3s all;
 }
 html body main .mainBox ul li h1 {
-  position: absolute;
   width: 100%;
   bottom: 0px;
   background: #ffffff;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
+  position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
   overflow: hidden;
 }
 html body main .mainBox ul li h1 p {
+  color: #33853b;
+  font-size: 18px;
+  font-weight: bold;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  font-size: 18px;
-  font-weight: bold;
-  color: #33853b;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
 }
 html body main .mainBox ul li h1 a {
-  opacity: 0;
   width: 80px;
   height: 80px;
   background: #ffffff;
@@ -769,6 +752,7 @@ html body main .mainBox ul li h1 a {
   pointer-events: none;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
+  opacity: 0;
 }
 html body main .mainBox ul li h1 a:hover, html body main .mainBox ul li h1 a:active, html body main .mainBox ul li h1 a.active {
   -webkit-transform: scale(1.1);
@@ -810,10 +794,10 @@ html body main .gotop i {
   font-size: 30px;
 }
 html body .bg {
-  position: fixed;
   width: 100%;
   min-width: 1100px;
   height: 100%;
+  position: fixed;
   top: 0px;
   left: 0px;
   z-index: -999;
@@ -965,7 +949,7 @@ html body .bg .small_Bub15 {
 }
 html body .bubContainer {
   width: 100%;
-  min-width: 1100px;
+  min-width: 1000px;
   height: 120px;
   position: fixed;
   top: 0px;
@@ -4682,14 +4666,14 @@ html body .mainAnime .enterBtn .wrapper_2::after {
   }
 }
 @media screen and (max-width: 1670px) {
-  html body main .mainBox.web .forWeb li h1 a {
+  html body main .mainBox ul.forWeb li h1 a {
     width: 70px;
     height: 70px;
   }
-  html body main .mainBox.web .forWeb li h1 a i {
+  html body main .mainBox ul.forWeb li h1 a i {
     font-size: 36px;
   }
-  html body main .mainBox.mobile .forMobile {
+  html body main .mainBox ul.forMobile {
     -ms-grid-columns: (1fr)[5];
     grid-template-columns: repeat(5, 1fr);
   }
@@ -4698,47 +4682,58 @@ html body .mainAnime .enterBtn .wrapper_2::after {
   html body .mainAnime .svgWrapper {
     width: 1100px;
   }
-  html body main .mainBox.web .forWeb {
+  html body main .mainBox ul.forWeb {
     -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
   }
-  html body main .mainBox.web .forWeb li h1 a {
+  html body main .mainBox ul.forWeb li h1 a {
     width: 80px;
     height: 80px;
   }
-  html body main .mainBox.web .forWeb li h1 a i {
+  html body main .mainBox ul.forWeb li h1 a i {
     font-size: 40px;
   }
-  html body main .mainBox.mobile .forMobile li h1 a {
+  html body main .mainBox ul.forMobile li h1 a {
     width: 65px;
     height: 65px;
   }
-  html body main .mainBox.mobile .forMobile li h1 a i {
+  html body main .mainBox ul.forMobile li h1 a i {
     font-size: 34px;
   }
 }
 @media screen and (max-width: 1260px) {
-  html body main .mainBox.web .forWeb {
+  html body header article .inputBox:hover input, html body header article .inputBox:active input, html body header article .inputBox.active input {
+    width: 260px;
+  }
+  html body header article .btnBox button {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+  }
+  html body header article .btnBox button span {
+    display: none;
+  }
+  html body main .mainBox ul.forWeb {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
     padding: 0 80px;
   }
-  html body main .mainBox.web .forWeb li:hover h1 a:nth-of-type(1), html body main .mainBox.web .forWeb li:active h1 a:nth-of-type(1), html body main .mainBox.web .forWeb li.active h1 a:nth-of-type(1) {
+  html body main .mainBox ul.forWeb li:hover h1 a:nth-of-type(1), html body main .mainBox ul.forWeb li:active h1 a:nth-of-type(1), html body main .mainBox ul.forWeb li.active h1 a:nth-of-type(1) {
     left: 28%;
   }
-  html body main .mainBox.web .forWeb li:hover h1 a:nth-of-type(2), html body main .mainBox.web .forWeb li:active h1 a:nth-of-type(2), html body main .mainBox.web .forWeb li.active h1 a:nth-of-type(2) {
+  html body main .mainBox ul.forWeb li:hover h1 a:nth-of-type(2), html body main .mainBox ul.forWeb li:active h1 a:nth-of-type(2), html body main .mainBox ul.forWeb li.active h1 a:nth-of-type(2) {
     right: 28%;
   }
-  html body main .mainBox.mobile .forMobile {
+  html body main .mainBox ul.forMobile {
     -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
     padding: 0 80px;
   }
-  html body main .mainBox.mobile .forMobile li h1 a {
+  html body main .mainBox ul.forMobile li h1 a {
     width: 80px;
     height: 80px;
   }
-  html body main .mainBox.mobile .forMobile li h1 a i {
+  html body main .mainBox ul.forMobile li h1 a i {
     font-size: 40px;
   }
 }
@@ -4746,18 +4741,18 @@ html body .mainAnime .enterBtn .wrapper_2::after {
   html body .mainAnime .svgWrapper {
     width: 800px;
   }
-  html body main .mainBox.web .forWeb li h1 a {
+  html body main .mainBox ul.forWeb li h1 a {
     width: 65px;
     height: 65px;
   }
-  html body main .mainBox.web .forWeb li h1 a i {
+  html body main .mainBox ul.forWeb li h1 a i {
     font-size: 34px;
   }
-  html body main .mainBox.mobile .forMobile li h1 a {
+  html body main .mainBox ul.forMobile li h1 a {
     width: 70px;
     height: 70px;
   }
-  html body main .mainBox.mobile .forMobile li h1 a i {
+  html body main .mainBox ul.forMobile li h1 a i {
     font-size: 34px;
   }
 }

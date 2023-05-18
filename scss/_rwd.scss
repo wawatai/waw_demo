@@ -7,12 +7,12 @@
 
                 .mainBox {
 
-                    &.web {
+                    ul {
 
-                        .forWeb {
+                        &.forWeb {
     
                             li {
-
+    
                                 h1 {
     
                                     a {
@@ -26,11 +26,8 @@
                                 }
                             }
                         }
-                    }
 
-                    &.mobile {
-
-                        .forMobile {
+                        &.forMobile {
                             grid-template-columns: repeat(5,1fr);
                         }
                     }
@@ -56,13 +53,13 @@
 
                 .mainBox {
 
-                    &.web {
+                    ul {
 
-                        .forWeb {
+                        &.forWeb {
                             grid-template-columns: repeat(3,1fr);
-
+    
                             li {
-
+    
                                 h1 {
     
                                     a {
@@ -76,11 +73,8 @@
                                 }
                             }
                         }
-                    }
 
-                    &.mobile {
-
-                        .forMobile {
+                        &.forMobile {
     
                             li {
     
@@ -109,13 +103,42 @@
         
         body {
 
+            header {
+
+                article {
+
+                    .inputBox {
+
+                        &:hover,&:active,&.active {
+        
+                            input {
+                                width: 260px;
+                            }
+                        }
+                    }
+
+                    .btnBox {
+
+                        button {
+                            width: 50px;
+                            height: 50px;
+                            padding: 0;
+
+                            span {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
             main {
 
                 .mainBox {
 
-                    &.web {
+                    ul {
 
-                        .forWeb {
+                        &.forWeb {
                             grid-template-columns: repeat(2,1fr);
                             padding: 0 80px;
 
@@ -138,11 +161,8 @@
                                 }
                             }
                         }
-                    }
 
-                    &.mobile {
-
-                        .forMobile {
+                        &.forMobile {
                             grid-template-columns: repeat(3,1fr);
                             padding: 0 80px;
     
@@ -184,9 +204,9 @@
 
                 .mainBox {
 
-                    &.web {
+                    ul {
 
-                        .forWeb {
+                        &.forWeb {
                             
                             li {
 
@@ -203,11 +223,8 @@
                                 }
                             }
                         }
-                    }
 
-                    &.mobile {
-
-                        .forMobile {
+                        &.forMobile {
     
                             li {
     
