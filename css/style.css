@@ -1633,6 +1633,36 @@ html body .mainAnime .enterBtn .wrapper_2::after {
   -webkit-animation: floatLeaf_2 10s ease-in-out 0s infinite;
           animation: floatLeaf_2 10s ease-in-out 0s infinite;
 }
+html body .mainAnime i {
+  width: 60px;
+  height: 60px;
+  border: 0.1px solid #ffffff;
+  border-radius: 50px;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: absolute;
+  -webkit-animation: rFade 2s linear;
+          animation: rFade 2s linear;
+  opacity: 0;
+}
+html body .mainAnime freeze {
+  width: 60px;
+  height: 60px;
+  border: 0.1px solid #259414;
+  border-radius: 50px;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: absolute;
+  -webkit-animation: rFade 2s linear;
+          animation: rFade 2s linear;
+  opacity: 0;
+}
 
 .fancybox-toolbar {
   right: 15% !important;
@@ -4663,6 +4693,40 @@ html body .mainAnime .enterBtn .wrapper_2::after {
   100% {
     -webkit-transform: rotate(200deg);
             transform: rotate(200deg);
+  }
+}
+@-webkit-keyframes rFade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(0);
+            transform: translate(-50%, -50%) scale(0);
+  }
+  30% {
+    opacity: 0.5;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(300%);
+            transform: translate(-50%, -50%) scale(300%);
+  }
+}
+@keyframes rFade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(0);
+            transform: translate(-50%, -50%) scale(0);
+  }
+  30% {
+    opacity: 0.5;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(300%);
+            transform: translate(-50%, -50%) scale(300%);
   }
 }
 @media screen and (max-width: 1670px) {

@@ -1608,3 +1608,19 @@
         transform: rotate(200deg);
     }
 }
+
+//滑鼠追蹤
+@keyframes rFade {
+    0% {
+        opacity: 0;
+        transform: translate(-50%,-50%) scale(0);
+    }
+    30% {
+        opacity: 0.5;
+        transform: translate(-50%,-50%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%,-50%) scale(300%);
+    }
+}

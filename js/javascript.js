@@ -153,6 +153,45 @@ $(function(){
     })
 })
 
+    //滑鼠追蹤
+
+$(function(){
+    var timer = null;
+    var handle = null;
+
+    $(".mainAnime").mousemove(function(mE){
+        var mX = mE.pageX - $(".mainAnime").offset().left;
+        var mY = mE.pageY - $(".mainAnime").offset().top;
+
+        clearInterval(handle);
+        handle = setInterval(function(){
+            $(".mainAnime")
+            .append("<freeze style='top: "+ mY +"px; left: "+ mX +"px;'></freeze>");
+
+            if($(".mainAnime freeze").length >= 5)
+            {
+                $(".mainAnime freeze").first()
+                .remove();
+            }
+        },700)
+
+        if(timer != null) return;
+
+        timer = setTimeout(function(){
+            timer = null;
+        },220);
+
+        $(".mainAnime")
+        .append("<i style='top: "+ mY +"px; left: "+ mX +"px;'></i>");
+
+        if($(".mainAnime i").length >= 10)
+        {
+            $(".mainAnime i").first()
+            .remove();
+        }
+    })
+})
+
     //手機版調整
 function isMobile() {
 
