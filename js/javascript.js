@@ -82,7 +82,7 @@ $(function(){
     //回到頂端按鈕
 
 $(function(){
-    $(window).scroll(function () {
+    $(".mainBox ul").scroll(function () {
         var scrollVal = $(this).scrollTop();
         if(scrollVal > 1){
             $(".gotop")
@@ -99,31 +99,10 @@ $(function(){
         };
     })
     $(".gotop").click(function(){
-        var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body'); //各瀏覽器相容性
-        $body.delay('0').animate({
+
+        $(".mainBox ul").animate({
             scrollTop: 0,
         },500);
-    })
-})
-
-    //隱藏列達成條件
-
-$(function(){
-    $(window).scroll(function () {
-        var scrollVal = $(this).scrollTop();
-        if(scrollVal > 1){
-                $(".hideBar").addClass('display');
-                $('header')
-                .offset({
-                    "top" : ""+ scrollVal +"",
-                });
-        } else{
-                $(".hideBar").removeClass('display');
-                $('header')
-                .offset({
-                    "top" : "0",
-                });
-        };
     })
 })
 
@@ -191,6 +170,23 @@ $(function(){
         }
     })
 })
+
+    //自動高
+
+$(function(){
+    var wH = $(window).innerHeight();
+
+    $(".mainBox ul")
+    .css("height",""+ (wH - 170) +"px");
+
+    $(window).resize(function(){
+        var wH = $(window).innerHeight();
+
+        $(".mainBox ul")
+        .css("height",""+ (wH - 170) +"px");
+    })
+})
+
 
     //手機版調整
 function isMobile() {
