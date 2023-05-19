@@ -70,12 +70,38 @@ $(function(){
     //自動抓取herf
 
 $(function(){
-    $('.img').each(function(index){
-        $('#web_demo'+index+' .img').css('background','url(./images/demoImg/web/web_demo'+index+'.jpg) no-repeat top center');
-        $('#web_demo'+index+' .link').attr('href','./images/demoImg/web/web_demo'+index+'.jpg');
-        $('#mobile_demo'+index+' .img').css('background','url(./images/demoImg/mobile/mobile_demo'+index+'.jpg)  no-repeat top center');
-        $('#mobile_demo'+index+' .link').attr('href','./images/demoImg/mobile/mobile_demo'+index+'.jpg');
-        $('.img').css('background-size','cover');
+    $(".mainBox .forWeb li").each(function(){
+        var n = $(this).index();
+
+        $(".mainBox .forWeb li:eq("+ n +") .img")
+        .css({
+            "background" : "url(./images/demoImg/web/web_demo"+ n +".jpg) top center",
+            "background-repeat" : "no-repeat",
+            "background-size" : "cover"
+        });
+
+        $(".mainBox .forWeb li:eq("+ n +") .link")
+        .attr("href","./images/demoImg/web/web_demo"+ n +".jpg");
+
+        $(".mainBox .forWeb li:eq("+ n +") p")
+        .text("Demo_"+ (n + 1) +"");
+    })
+
+    $(".mainBox .forMobile li").each(function(){
+        var n = $(this).index();
+
+        $(".mainBox .forMobile li:eq("+ n +") .img")
+        .css({
+            "background" : "url(./images/demoImg/web/web_demo"+ n +".jpg) top center",
+            "background-repeat" : "no-repeat",
+            "background-size" : "cover"
+        });
+
+        $(".mainBox .forMobile li:eq("+ n +") .link")
+        .attr("href","./images/demoImg/web/web_demo"+ n +".jpg");
+
+        $(".mainBox .forMobile li:eq("+ n +") p")
+        .text("Demo_"+ (n + 1) +"");
     })
 })
 
