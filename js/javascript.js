@@ -92,13 +92,13 @@ $(function(){
 
         $(".mainBox .forMobile li:eq("+ n +") .img")
         .css({
-            "background" : "url(./images/demoImg/web/web_demo"+ n +".jpg) top center",
+            "background" : "url(./images/demoImg/mobile/mobile_demo"+ n +".jpg) top center",
             "background-repeat" : "no-repeat",
             "background-size" : "cover"
         });
 
         $(".mainBox .forMobile li:eq("+ n +") .link")
-        .attr("href","./images/demoImg/web/web_demo"+ n +".jpg");
+        .attr("href","./images/demoImg/mobile/mobile_demo"+ n +".jpg");
 
         $(".mainBox .forMobile li:eq("+ n +") p")
         .text("Demo_"+ (n + 1) +"");
