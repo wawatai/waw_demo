@@ -624,8 +624,8 @@ html body main .mainBox ul.forWeb li h1 a:nth-of-type(2) {
   right: 5%;
 }
 html body main .mainBox ul.forMobile {
-  -ms-grid-columns: (1fr)[6];
-  grid-template-columns: repeat(6, 1fr);
+  -ms-grid-columns: (1fr)[5];
+  grid-template-columns: repeat(5, 1fr);
 }
 html body main .mainBox ul.forMobile li {
   padding-bottom: 175%;
@@ -804,7 +804,7 @@ html body main .gotop i {
 }
 html body .bg {
   width: 100%;
-  min-width: 1100px;
+  min-width: 1000px;
   height: 100%;
   position: fixed;
   top: 0px;
@@ -4737,7 +4737,7 @@ html body .mainAnime freeze {
             transform: translate(-50%, -50%) scale(300%);
   }
 }
-@media screen and (max-width: 1670px) {
+@media only screen and (max-width: 1750px) {
   html body main .mainBox ul.forWeb li h1 a {
     width: 70px;
     height: 70px;
@@ -4745,32 +4745,24 @@ html body .mainAnime freeze {
   html body main .mainBox ul.forWeb li h1 a i {
     font-size: 36px;
   }
-  html body main .mainBox ul.forMobile {
-    -ms-grid-columns: (1fr)[5];
-    grid-template-columns: repeat(5, 1fr);
-  }
 }
 @media screen and (max-width: 1450px) {
   html body .mainAnime .svgWrapper {
     width: 1100px;
   }
-  html body main .mainBox ul.forWeb {
-    -ms-grid-columns: (1fr)[3];
-    grid-template-columns: repeat(3, 1fr);
-  }
   html body main .mainBox ul.forWeb li h1 a {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
   }
   html body main .mainBox ul.forWeb li h1 a i {
-    font-size: 40px;
+    font-size: 28px;
   }
   html body main .mainBox ul.forMobile li h1 a {
     width: 65px;
     height: 65px;
   }
   html body main .mainBox ul.forMobile li h1 a i {
-    font-size: 34px;
+    font-size: 32px;
   }
 }
 @media screen and (max-width: 1260px) {
@@ -4785,10 +4777,9 @@ html body .mainAnime freeze {
   html body header article .btnBox button span {
     display: none;
   }
-  html body main .mainBox ul.forWeb {
-    -ms-grid-columns: (1fr)[2];
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0 80px;
+  html body main .mainBox ul.forWeb li:hover h1 a, html body main .mainBox ul.forWeb li:active h1 a, html body main .mainBox ul.forWeb li.active h1 a {
+    width: 40px;
+    height: 40px;
   }
   html body main .mainBox ul.forWeb li:hover h1 a:nth-of-type(1), html body main .mainBox ul.forWeb li:active h1 a:nth-of-type(1), html body main .mainBox ul.forWeb li.active h1 a:nth-of-type(1) {
     left: 28%;
@@ -4796,17 +4787,15 @@ html body .mainAnime freeze {
   html body main .mainBox ul.forWeb li:hover h1 a:nth-of-type(2), html body main .mainBox ul.forWeb li:active h1 a:nth-of-type(2), html body main .mainBox ul.forWeb li.active h1 a:nth-of-type(2) {
     right: 28%;
   }
-  html body main .mainBox ul.forMobile {
-    -ms-grid-columns: (1fr)[3];
-    grid-template-columns: repeat(3, 1fr);
-    padding: 0 80px;
+  html body main .mainBox ul.forWeb li:hover h1 a i, html body main .mainBox ul.forWeb li:active h1 a i, html body main .mainBox ul.forWeb li.active h1 a i {
+    font-size: 24px;
   }
   html body main .mainBox ul.forMobile li h1 a {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
   }
   html body main .mainBox ul.forMobile li h1 a i {
-    font-size: 40px;
+    font-size: 28px;
   }
 }
 @media screen and (max-width: 1050px) {
@@ -4818,13 +4807,6 @@ html body .mainAnime freeze {
     height: 65px;
   }
   html body main .mainBox ul.forWeb li h1 a i {
-    font-size: 34px;
-  }
-  html body main .mainBox ul.forMobile li h1 a {
-    width: 70px;
-    height: 70px;
-  }
-  html body main .mainBox ul.forMobile li h1 a i {
     font-size: 34px;
   }
 }

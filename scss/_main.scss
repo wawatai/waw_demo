@@ -88,7 +88,7 @@ html {
                     }
 
                     &.forMobile {
-                        grid-template-columns: repeat(6,1fr);
+                        grid-template-columns: repeat(5,1fr);
 
                         li {
                             padding-bottom: 175%;
@@ -276,7 +276,7 @@ html {
         //bg
         .bg {
             width: 100%;
-            min-width: 1100px;
+            min-width: 1000px;
             height: 100%;
             position: fixed;
             top: 0px;
